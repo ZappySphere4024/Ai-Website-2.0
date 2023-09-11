@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <title>Chatbot</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(45deg, #64CCDA, #A6FF96); /* Gradient background */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #chat-container {
+        background-color: rgba(255, 255, 255, 0.9); /* Add some opacity to chat container background */
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        width: 350px;
+        padding: 20px;
+    }
+    #chat-history {
+        height: 300px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    #user-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 10px;
+        outline: none;
+        font-size: 16px;
+    }
+    #user-input::placeholder {
+        color: #aaa;
+    }
+    #user-input:focus {
+        border-color: #007BFF;
+    }
+    #user-input:focus::placeholder {
+        color: #007BFF;
+    }
+    /* User Message Styles */
+    .user-message {
+        color: black;
+        background-color: #8ECDDD; /* Blue background for user messages */
+        border: 1px solid #8ECDDD; /* Blue border for user messages */
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: black;
+    }
+    /* Bot Message Styles */
+    .bot-message {
+        color: black;
+        background-color: #CEDEBD; /* Green background for bot messages */
+        border: 1px solid #CEDEBD; /* Green border for bot messages */
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 10px;
+        color:black;
+    }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-history">
+            <p class="bot-message"><strong>Chatbot:</strong> Greetings! I possess the capability to provide you with the current day when you input a date(format-YYYY-MM-DD), or I can furnish you with information regarding arithmetic, geometric, or Fibonacci series.</p>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+    </div>
+
+    <script>
+        const chatHistory = document.getElementById('chat-history');
+        const userInput = document.getElementById('user-input');
+
+        function addChatMessage(user, message, messageClass) {
+            const messageElement = document.createElement('p');
+            messageElement.classList.add(messageClass);
+            messageElement.innerHTML = `<strong>${user}:</strong> ${message}`;
+            chatHistory.appendChild(messageElement);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        function handleUserInput() {
+            const userMessage = userInput.value.trim().toLowerCase();
+            if (userMessage !== '') {
+                if (isValidDate(userMessage)) {
+                    const dayOfWeek = getDayOfWeek(userMessage);
+                    addChatMessage('You', userMessage, 'user-message');
+                    addChatMessage('Chatbot', `The day for ${userMessage} is ${dayOfWeek}.`, 'bot-message');
+                } else if (userMessage.includes('arithmetic')) {
+                    const series = generateArithmeticSeries();
+                    addChatMessage('You', userMessage, 'user-message');
+                    addChatMessage('Chatbot', `Arithmetic Series: ${series}`, 'bot-message');
+                } else if (userMessage.includes('geometric')) {
+                    const series = generateGeometricSeries();
+                    addChatMessage('You', userMessage, 'user-message');
+                    addChatMessage('Chatbot', `Geometric Series: ${series}`, 'bot-message');
+                } else if (userMessage.includes('fibonacci')) {
+                    const series = generateFibonacciSeries();
+                    addChatMessage('You', userMessage, 'user-message');
+                    addChatMessage('Chatbot', `Fibonacci Series: ${series}`, 'bot-message');
+                } else {
+                    addChatMessage('You', userMessage, 'user-message');
+                    addChatMessage('Chatbot', "I'm sorry, I don't understand. Please ask for arithmetic, geometric, or Fibonacci series or provide a valid date.", 'bot-message');
+                }
+                userInput.value = '';
+            }
+        }
+
+        function isValidDate(dateString) {
+            const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+            return dateRegex.test(dateString);
+        }
+
+        function getDayOfWeek(dateString) {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const date = new Date(dateString);
+            const dayIndex = date.getDay();
+            return daysOfWeek[dayIndex];
+        }
+
+        function generateArithmeticSeries() {
+            let series = '';
+            for (let i = 0; i < 10; i++) {
+                series += i * 5 + ' ';
+            }
+            return series.trim();
+        }
+
+        function generateGeometricSeries() {
+            let series = '';
+            let term = 1;
+            for (let i = 0; i < 10; i++) {
+                series += term + ' ';
+                term *= 2;
+            }
+            return series.trim();
+        }
+
+        function generateFibonacciSeries() {
+            let series = '0 1';
+            let a = 0, b = 1, nextTerm;
+            for (let i = 2; i < 10; i++) {
+                nextTerm = a + b;
+                series += ' ' + nextTerm;
+                a = b;
+                b = nextTerm;
+            }
+            return series;
+        }
+
+        userInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                handleUserInput();
+            }
+        });
+    </script>
+</body>
+</html>

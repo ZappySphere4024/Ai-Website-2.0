@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <style>
+    button {
+        background-color: powderblue;
+        color: black;
+        padding: 10px 20px;
+        border: black;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+        position: relative;
+            top: -100px; /* Adjust the top position as needed */
+            right: -600px;
+    }
+    .button2{
+      background-color: black;
+      color: white  ;
+      padding: 20px 40px;
+      border: black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      position: fixed;
+          top: 600px; /* Adjust the top position as needed */
+          right: 20px;
+    }
+
+    /* Add the hover effect */
+    .button:hover {
+        color: red;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: powderblue;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: red;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the AI Website</h1>
+        <nav>
+          <a href="index.html"> <button class="button1" type="button" name="Ai Sites"><strong>AI Sites</strong></button> </a>
+          <a href="chatbot.html"> <button class="button2" type="button" name="ChatBot"><strong>Chatbot</strong></button> </a>
+            <ul>
+                <li><a href="#about">What is AI</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#types">Types of AI</a></li>
+                <li><a href="#type1">Rule-based system</a></li>
+                <li><a href="#type2">Machine Learning</a></li>
+                <li><a href="#type3">Deep Learning</a></li>
+                <li><a href="#future">Future of AI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="content">
+        <h2>What is AI</h2>
+        <p>Artificial Intelligence, or AI, is a field of computer science that focuses on
+        creating machines capable of performing tasks that typically require human intelligence,
+        such as understanding natural language, recognizing objects, or making decisions. Unlike
+        traditional programming, where the programmer writes specific instructions for the computer
+        o follow, AI systems use algorithms that allow them to learn from data and make predictions
+        or decisions based on that learning.</p>
+        <p>One example of AI in action is image recognition software used by social media platforms to
+        automatically tag people in photos. Instead of being programmed to recognize specific faces,
+        the software uses machine learning algorithms to analyze patterns in the pixels of the image
+        and identify faces based on those patterns. This approach allows the software to recognize faces
+        it has never seen before and adapt to new images over time.</p>
+    </section>
+
+    <section id="applications" class="content">
+        <h2>Applications of AI</h2>
+        <p>Artificial Intelligence (AI) has a wide range of applications across various industries. Here are some examples of AI applications:</p>
+
+<li><strong>Healthcare:</strong>
+<ul>Medical Diagnosis: AI algorithms can analyze medical data such as X-rays, MRIs, and patient records to assist doctors in diagnosing diseases like cancer.</ul>
+<ul>Drug Discovery: AI accelerates drug discovery by predicting potential drug candidates and simulating their effects.</ul></li>
+
+<li><strong>Finance:</strong>
+<ul>Algorithmic Trading: AI-driven algorithms analyze market data to make trading decisions in real-time.</ul>
+<ul>Credit Scoring: AI assesses an individual's creditworthiness by analyzing their financial history.</ul></li>
+
+<li><strong>Retail:</strong>
+<ul>Recommendation Systems: E-commerce platforms like Amazon use AI to recommend products to customers based on their browsing and purchase history.</ul>
+<ul>Inventory Management: AI optimizes inventory levels and reduces costs by predicting demand.</ul></li>
+
+<li><strong>Autonomous Vehicles:</strong>
+<ul>Self-Driving Cars: AI enables vehicles to perceive their surroundings, make decisions, and navigate without human intervention.</ul></li>
+
+<li><strong>Natural Language Processing (NLP):</strong>
+<ul>Chatbots: AI-powered chatbots like Siri and Google Assistant understand and respond to natural language queries.</ul>
+<ul>Language Translation: NLP is used in translation services like Google Translate to convert text from one language to another.</ul></li>
+
+<li><strong>Robotics:</strong>
+<ul>Industrial Robots: AI-controlled robots automate tasks in manufacturing, improving efficiency and precision.</ul>
+<ul>Medical Robots: Robots assist surgeons in performing minimally invasive surgeries with high precision.</ul></li>
+
+<li><strong>Entertainment:</strong>
+<ul>Content Recommendations: Streaming platforms like Netflix use AI to recommend movies and TV shows.</ul>
+<ul>Video Game AI: Game characters use AI to adapt to player behavior and provide a challenging gaming experience.</ul></li>
+
+<li><strong>Cybersecurity:</strong>
+<ul>Threat Detection: AI algorithms analyze network traffic to identify and mitigate cybersecurity threats.</ul>
+<ul>User Authentication: AI-based biometric authentication methods, such as facial recognition, enhance security.</ul></li>
+
+<li><strong>Agriculture:</strong>
+<ul>Precision Farming: AI helps farmers optimize crop yield by monitoring soil conditions, weather, and crop health.</ul></li>
+
+<li><strong>Education:</strong>
+<ul>Language Learning Apps: Apps like Duolingo use AI to tailor language lessons to the learner's proficiency level.</ul></li>
+
+<li><strong>Space Exploration:</strong>
+<ul>Autonomous Spacecraft: AI assists in autonomous navigation and decision-making for spacecraft, such as NASA's Mars rovers.</ul></li>
+
+<li><strong>Energy Management:</strong>
+<ul>Smart Grids: AI optimizes energy distribution and consumption in smart grid systems, reducing energy wastage.</li></ul>
+
+<p>These examples showcase the versatility of AI across different domains, enhancing efficiency, decision-making, and user experiences. AI continues to evolve and find new applications as technology advances.</p>
+    </section>
+
+    <section id="types" class="content">
+        <h2>Types of AI</h2>
+        <p>There are three main types of AI:</p>
+        <ul>
+            <li>Rule-Based Systems</li>
+            <li>Machine Learning</li>
+            <li>Deep Learning</li>
+        </ul>
+        <p><strong>Rule-based systems</strong> are the simplest type of AI, where a set of predefined rules are used to make decisions. For example,
+       a spam filter that flags emails containing certain words or phrases.</p> <p><strong> Machine learning </strong>is a more advanced type of AI,
+        where algorithms are trained on large amounts of data to make predictions or classifications. For example,
+        a recommendation system that suggests products based on a user's past purchases.</p><p><strong>Deep learning</strong> is the most complex type of AI,
+        where neural networks are used to learn from vast amounts of data and make highly accurate predictions. For example,
+        a self-driving car that uses deep learning to recognize objects and make driving decisions.</p>
+    </section>
+
+    <section id="type1" class="content">
+        <h2>Rule-based system</h2>
+        <p>Rule-based artificial intelligence applies pre-set rules and guidelines to make
+          determinations and reach conclusions.
+A rule-based system uses human-defined rules to solve problems or make decisions. These systems are widely used in different
+fields, such as AI, expert systems, and business logic.</p>
+<p style="color: Black  ; font-size: 18px">Rule-based systems are a type of artificial intelligence that operates on a set of predefined rules.
+    Here are some examples of rule-based systems:
+    <ul>
+      <li>Expert systems that provide advice or make decisions based on a set of rules and a knowledge base.</li>
+      <li>Spam filters that use rules to identify and filter out unwanted messages in email inboxes.</li>
+      <li>Fraud detection systems that use rules to identify suspicious behavior patterns in financial transactions.</li>
+      <li>Voice assistants that use rules to understand and respond to voice commands.</li>
+      <li>Diagnosis systems that use rules to identify and suggest treatments for medical conditions.</li>
+      <li>Traffic control systems that use rules to manage traffic flow and avoid accidents.</li>
+      <li>Decision support systems that use rules to provide recommendations or options to users.</li>
+    </ul>
+</p>
+    </section>
+
+    <section id="type2" class="content">
+        <h2>Machine Learning</h2>
+        <p>Machine learning is a type of AI that enables computer systems to learn and improve from
+          experience without being explicitly programmed. It involves training algorithms on large datasets to recognize patterns
+          and make predictions based on that data. One example of machine learning in day-to-day life is email spam filters, which
+          use machine learning algorithms to identify and block unwanted messages. Another example is voice assistants like Siri or
+           Alexa, which use machine learning to understand natural language commands.</p>
+        <p>One advantage of machine learning is its ability to process vast amounts of data quickly and accurately.
+        This makes it useful for tasks like image recognition, speech recognition, and natural language processing.
+        However, there are also limitations to machine learning. For example, it requires large amounts of high-quality
+        data to train algorithms effectively. Additionally, machine learning models can be biased if the data used to train
+        them is not diverse enough.</p>
+        <p>Examples of machine learning include:
+          <li>Image recognition</li>
+          <li>Natural language processing</li>
+          <li>Recommendation systems</li>
+          <li>Predictive analytics</li>
+          <li>Anomaly detection</li>
+        </p>
+    </section>
+
+    <section id="type3" class="content">
+        <h2>Deep Learning</h2>
+        <p>Deep learning is a subset of machine learning that uses neural networks
+           with multiple layers to analyze and learn from complex data sets. It is inspired by the structure and function of the
+           human brain, allowing it to recognize patterns and make predictions based on large amounts of data.</p>
+        <p>One example of deep learning in day-to-day life is voice recognition technology
+          used in virtual assistants like Siri or Alexa.
+        These systems use deep learning algorithms to understand and interpret human speech, allowing them to respond to commands and
+        questions. Another example is image recognition technology used in self-driving cars to identify objects and obstacles on the road.
+        The advantages of deep learning include its ability to handle large amounts of unstructured data, its flexibility in adapting to
+        new tasks and domains, and its potential for high accuracy in prediction and classification. However, limitations include the need
+        for large amounts of labeled data for training, the computational resources required for training and inference, and the potential
+        for overfitting or bias in the model.</p>
+    </section>
+
+    <section id="future" class="content">
+        <h2>Future of AI</h2>
+        <p>The future of AI is incredibly exciting, with emerging technologies and applications that have the potential to transform the way we live and work.</p>
+        <p>The future of AI is promising, and it is expected to have a profound impact on various aspects of our lives. Here are five examples of the future of AI:
+
+<li><strong>Healthcare Advancements:</strong>
+<ul>AI-driven diagnostics and treatment recommendation systems will become more sophisticated. AI will help identify rare diseases and develop personalized treatment plans.</ul>
+<ul>Remote patient monitoring using wearable devices and AI will allow early detection of health issues and proactive interventions.</ul></li>
+
+<li><strong>Autonomous Everything:</strong>
+<ul>Autonomous vehicles will become a common mode of transportation, enhancing safety and reducing traffic congestion.</ul>
+<ul>AI-driven drones and robots will be used for various tasks, such as package delivery, disaster response, and infrastructure inspection.</ul></li>
+
+<li><strong>AI in Education:</strong>
+<ul>AI-powered virtual tutors and personalized learning platforms will adapt to each student's learning style and pace.</ul>
+<ul>AI-driven assessments will provide educators with valuable insights into student performance and areas for improvement.</ul></li>
+
+<li><strong>Natural Language Understanding:</strong>
+<ul>Conversational AI will become more human-like, enabling advanced interactions with virtual assistants and chatbots.</ul>
+<ul>Multilingual AI will facilitate seamless communication across languages and cultures, breaking down language barriers.</ul></li>
+
+<li><strong>AI in Research and Development:</strong>
+<ul>Drug discovery processes will be significantly accelerated, leading to the development of novel treatments and vaccines.</ul>
+<ul>AI will play a crucial role in scientific research, assisting researchers in analyzing complex data and making breakthroughs in fields like materials science and genomics.</ul></li>
+<p>These examples represent just a glimpse of the potential future of AI. As AI technologies continue to advance, they are likely to transform various industries, improve decision-making, and enhance our daily lives in ways that we can't yet fully predict. However, with these advancements come ethical and societal considerations that will need to be carefully addressed to ensure responsible AI deployment.</p>
+    </section>
+
+    <div class="image-container">
+        <img src="istockphoto-1452604857-612x612.jpg" alt="Artificial Intelligence">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
