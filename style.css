@@ -8,9 +8,9 @@ button{
     cursor: pointer;
     transition: background-color 0.5s ease;
     position: static;
-    top: -80px;
+   /* top: -80px;
     /* Adjust the top position as needed */
-    right: -600px;
+    /*right: -600px;*/
     font-size: 15px;
 }
 
