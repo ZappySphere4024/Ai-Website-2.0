@@ -1,0 +1,101 @@
+/* Add this to your existing CSS or create a separate CSS file */
+button{
+    background-color: powderblue;
+    color: black;
+    padding: 10px 20px;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    position: relative;
+    top: -100px;
+    /* Adjust the top position as needed */
+    right: -600px;
+}
+
+.button2 {
+    background-color: black;
+    color: white;
+    padding: 20px 40px;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    position: fixed;
+    top: 600px;
+    /* Adjust the top position as needed */
+    right: 80px;
+}
+
+/* Add the hover effect */
+.button:hover {
+    color: red;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: powderblue;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+.content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+}
+
+p {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
