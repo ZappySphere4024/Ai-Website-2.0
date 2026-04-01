@@ -3,164 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="assets/images/favicon.ico">
     <title>Chatbot</title>
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(45deg, #64CCDA, #A6FF96); /* Gradient background */
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    #chat-container {
-        background-color: rgba(255, 255, 255, 0.9); /* Add some opacity to chat container background */
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-        width: 350px;
-        padding: 20px;
-    }
-    #chat-history {
-        height: 300px;
-        overflow-y: scroll;
-        border: 1px solid #ccc;
-        padding: 10px;
-    }
-    #user-input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        margin-top: 10px;
-        outline: none;
-        font-size: 16px;
-    }
-    #user-input::placeholder {
-        color: #aaa;
-    }
-    #user-input:focus {
-        border-color: #007BFF;
-    }
-    #user-input:focus::placeholder {
-        color: #007BFF;
-    }
-    /* User Message Styles */
-    .user-message {
-        color: black;
-        background-color: #8ECDDD; /* Blue background for user messages */
-        border: 1px solid #8ECDDD; /* Blue border for user messages */
-        border-radius: 15px;
-        padding: 10px;
-        margin-bottom: 10px;
-        color: black;
-    }
-    /* Bot Message Styles */
-    .bot-message {
-        color: black;
-        background-color: #CEDEBD; /* Green background for bot messages */
-        border: 1px solid #CEDEBD; /* Green border for bot messages */
-        border-radius: 15px;
-        padding: 10px;
-        margin-bottom: 10px;
-        color:black;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            height: 100%;
+            max-height: 530px;
+            margin: 0 auto;
+            padding-bottom: 70px; /* Adding space for the message box */
+        }
+
+        .logo img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            background-color: #2e2e2e;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background-color: #3e3e3e;
+        }
+
+        .message-box {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #333;
+            display: flex;
+            gap: 10px;
+        }
+
+        .message-box input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            font-size: 16px;
+            width: 100%;
+            height: 40px; /* Set a fixed height for the input box */
+            box-sizing: border-box; /* Ensure padding is included in the height */
+        }
+
+        .message-box input:focus {
+            outline: none;
+        }
+
+        .message-box button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #4e4e4e;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .message-box button:hover {
+            background-color: #5e5e5e;
+        }
+
+        .chat-display {
+            max-height: 70vh;
+            overflow-y: auto;
+            width: 100%;
+            height: 530px;
+            padding: 20px;
+            padding-bottom: 80px; /* Adding padding at the bottom to prevent overlap */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            scrollbar-width: thin; /* For Firefox */
+            scrollbar-color: #4e4e4e #333; /* For Firefox */
+        }
+
+        /* For WebKit (Chrome, Safari, Edge) */
+        .chat-display::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .chat-display::-webkit-scrollbar-track {
+            background: #333;
+        }
+
+        .chat-display::-webkit-scrollbar-thumb {
+            background-color: #4e4e4e;
+            border-radius: 10px;
+            border: 2px solid #333;
+        }
+
+        .chat-message {
+            background-color: #2e2e2e;
+            margin: 10px 0;
+            padding: 10px 20px;
+            border-radius: 20px;
+            max-width: 60%;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: #3e3e3e;
+            text-align: right;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        .bot-message a {
+            color: #1e90ff; /* Change this color to your preferred link color */
+            text-decoration: none;
+        }
+
+        .bot-message a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div id="chat-container">
-        <div id="chat-history">
-            <p class="bot-message"><strong>Chatbot:</strong> Greetings! I possess the capability to provide you with the current day when you input a date(format-YYYY-MM-DD), or I can furnish you with information regarding arithmetic, geometric, or Fibonacci series.</p>
+  <center><img src="assets/images/favicon.ico" alt="Logo" width="100px" height="100px"></center>
+  <div class="options">
+      <div class="option" onclick="sendBotMessage('Can AI replace Humans')">Can AI replace Humans</div>
+      <div class="option" onclick="sendBotMessage('Create a workout plan')">Create a workout plan</div>
+      <div class="option" onclick="sendBotMessage('Quiz me on ancient civilizations')">Quiz me on ancient civilizations</div>
+      <div class="option" onclick="sendBotMessage('Fun fact about the Roman Empire')">Fun fact about the Roman Empire</div>
+      <div class="option" onclick="sendBotMessage('Current news')">Current news</div>
+  </div>
+    <div class="container">
+        <div class="logo">
+            <!-- You can add a logo image here if you have one -->
         </div>
-        <input type="text" id="user-input" placeholder="Type your message...">
+        <div class="chat-display" id="chat-display"></div>
+        <div class="message-box">
+            <input type="text" id="chat-input" placeholder="Message ChatGPT">
+            <button onclick="sendMessage()">Send</button>
+        </div>
     </div>
 
     <script>
-        const chatHistory = document.getElementById('chat-history');
-        const userInput = document.getElementById('user-input');
-
-        function addChatMessage(user, message, messageClass) {
-            const messageElement = document.createElement('p');
-            messageElement.classList.add(messageClass);
-            messageElement.innerHTML = `<strong>${user}:</strong> ${message}`;
-            chatHistory.appendChild(messageElement);
-            chatHistory.scrollTop = chatHistory.scrollHeight;
-        }
-
-        function handleUserInput() {
-            const userMessage = userInput.value.trim().toLowerCase();
-            if (userMessage !== '') {
-                if (isValidDate(userMessage)) {
-                    const dayOfWeek = getDayOfWeek(userMessage);
-                    addChatMessage('You', userMessage, 'user-message');
-                    addChatMessage('Chatbot', `The day for ${userMessage} is ${dayOfWeek}.`, 'bot-message');
-                } else if (userMessage.includes('arithmetic')) {
-                    const series = generateArithmeticSeries();
-                    addChatMessage('You', userMessage, 'user-message');
-                    addChatMessage('Chatbot', `Arithmetic Series: ${series}`, 'bot-message');
-                } else if (userMessage.includes('geometric')) {
-                    const series = generateGeometricSeries();
-                    addChatMessage('You', userMessage, 'user-message');
-                    addChatMessage('Chatbot', `Geometric Series: ${series}`, 'bot-message');
-                } else if (userMessage.includes('fibonacci')) {
-                    const series = generateFibonacciSeries();
-                    addChatMessage('You', userMessage, 'user-message');
-                    addChatMessage('Chatbot', `Fibonacci Series: ${series}`, 'bot-message');
-                } else {
-                    addChatMessage('You', userMessage, 'user-message');
-                    addChatMessage('Chatbot', "I'm sorry, I don't understand. Please ask for arithmetic, geometric, or Fibonacci series or provide a valid date.", 'bot-message');
-                }
-                userInput.value = '';
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (message) {
+                displayMessage(message, 'user-message');
+                input.value = '';
+                setTimeout(() => respondToMessage(message), 500); // Respond after a short delay
             }
         }
 
-        function isValidDate(dateString) {
-            const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-            return dateRegex.test(dateString);
+        function sendBotMessage(message) {
+            displayMessage(message, 'user-message');
+            setTimeout(() => respondToMessage(message), 500); // Respond after a short delay
         }
 
-        function getDayOfWeek(dateString) {
-            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const date = new Date(dateString);
-            const dayIndex = date.getDay();
-            return daysOfWeek[dayIndex];
-        }
-
-        function generateArithmeticSeries() {
-            let series = '';
-            for (let i = 0; i < 10; i++) {
-                series += i * 5 + ' ';
+        function respondToMessage(message) {
+            let response;
+            if (message.toLowerCase() === "can ai replace humans") {
+                response = "AI can replace humans in routine and repetitive tasks, improving efficiency and decision-making. However, it struggles with complex interactions requiring empathy and Ai cant replace humans in  creativity. The best approach is often to use AI to augment human capabilities rather than fully replace them.";
+            } else if (message.toLowerCase() === "create a workout plan") {
+                response = "Sure! Start with a warm-up, then include a mix of cardio, strength training, and cool-down stretches. Example: 10 min run, 20 min weights, 10 min stretching.";
+            } else if (message.toLowerCase() === "quiz me on ancient civilizations") {
+                response = "Here's a question: Who was the first emperor of Rome? (Answer: Augustus)";
+            } else if (message.toLowerCase() === "fun fact about the roman empire") {
+                response = "Did you know? The Roman Empire was so vast that at its peak, it covered 2.5 million square miles!";
+            } else if (message.toLowerCase() === "current news") {
+                response = "You can find the latest news here: <a href='https://timesofindia.indiatimes.com/' target='_blank'>Times of India</a>";
+            } else if (message.toLowerCase() === "hi" || "hello") {
+                response = "How can I assist you today?";
             }
-            return series.trim();
-        }
-
-        function generateGeometricSeries() {
-            let series = '';
-            let term = 1;
-            for (let i = 0; i < 10; i++) {
-                series += term + ' ';
-                term *= 2;
+            else {
+                response = "I'm sorry, I don't understand. Please try asking something else.";
             }
-            return series.trim();
+            displayMessage(response, 'bot-message');
         }
 
-        function generateFibonacciSeries() {
-            let series = '0 1';
-            let a = 0, b = 1, nextTerm;
-            for (let i = 2; i < 10; i++) {
-                nextTerm = a + b;
-                series += ' ' + nextTerm;
-                a = b;
-                b = nextTerm;
-            }
-            return series;
+        function displayMessage(message, className) {
+            const chatDisplay = document.getElementById('chat-display');
+            const newMessage = document.createElement('div');
+            newMessage.className = `chat-message ${className}`;
+            newMessage.innerHTML = message;
+            chatDisplay.appendChild(newMessage);
+            chatDisplay.scrollTop = chatDisplay.scrollHeight; // Scroll to the bottom
         }
 
-        userInput.addEventListener('keyup', (event) => {
+        // Allow pressing Enter to send the message
+        document.getElementById('chat-input').addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
-                handleUserInput();
+                sendMessage();
             }
         });
     </script>
