@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Directory | 100+ Neural Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            black: '#030712',
+                            primary: '#6366f1',
+                            secondary: '#a855f7',
+                            accent: '#22d3ee'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { 
+            background: rgba(15, 23, 42, 0.3); 
+            backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+        }
+        .category-header {
+            background: linear-gradient(to right, rgba(99, 102, 241, 0.1), transparent);
+            border-left: 4px solid #6366f1;
+        }
+    </style>
+</head>
+<body class="bg-brand-black text-slate-300 font-sans">
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center">
+                    <div class="w-4 h-4 bg-brand-black rounded-sm rotate-45"></div>
+                </div>
+                AI<span class="text-brand-accent">.</span>INSIGHTS
+            </a>
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="text-sm font-semibold text-slate-400 hover:text-white transition-colors">Protocol</a>
+                <a href="aisites.html" class="px-4 py-2 glass border-white/10 text-xs font-bold uppercase tracking-widest text-brand-accent rounded-xl">Directory</a>
+                <a href="chatbot.html" class="px-6 py-2.5 bg-white text-brand-black text-sm font-bold rounded-full transition-all">Assistant</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-48 pb-16 px-6 text-center">
+        <h1 class="text-6xl font-black text-white mb-6 tracking-tighter">Neural Directory</h1>
+        <p class="text-slate-400 max-w-2xl mx-auto text-xl italic leading-relaxed">The ultimate collection of 100+ AI architectures reshaping the digital landscape.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        
+        <!-- LLMs -->
+        <section class="mb-24">
+            <div class="category-header p-8 rounded-3xl mb-12">
+                <h2 class="text-3xl font-black text-white mb-2 italic">01. Large Language Models</h2>
+                <p class="text-slate-500 font-medium">Advanced neural conversation and reasoning engines.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <a href="https://chat.openai.com/" class="group p-8 glass rounded-[2rem] hover:bg-brand-primary/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-primary transition-colors">ChatGPT</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">The industry standard for conversational AI and complex reasoning.</p>
+                </a>
+                <a href="https://claude.ai/" class="group p-8 glass rounded-[2rem] hover:bg-brand-primary/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-primary transition-colors">Claude 3</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">High-reasoning, safe, and context-aware LLM by Anthropic.</p>
+                </a>
+                <a href="https://gemini.google.com/" class="group p-8 glass rounded-[2rem] hover:bg-brand-primary/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-primary transition-colors">Google Gemini</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">Multimodal intelligence core integrated with Google ecosystem.</p>
+                </a>
+                <a href="https://www.perplexity.ai/" class="group p-8 glass rounded-[2rem] hover:bg-brand-primary/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-primary transition-colors">Perplexity</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">Real-time AI search and highly efficient research engine.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Visual -->
+        <section class="mb-24">
+            <div class="category-header p-8 rounded-3xl mb-12" style="border-left-color: #a855f7;">
+                <h2 class="text-3xl font-black text-white mb-2 italic">02. Creative Synthesis</h2>
+                <p class="text-slate-500 font-medium">Visual generative platforms and high-fidelity digital art.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <a href="https://midjourney.com/" class="group p-8 glass rounded-[2rem] hover:bg-brand-secondary/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-secondary transition-colors">Midjourney</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">Highest quality text-to-image synthesis and art generation.</p>
+                </a>
+                <a href="https://runwayml.com/" class="group p-8 glass rounded-[2rem] hover:bg-brand-secondary/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-secondary transition-colors">Runway Gen-3</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">Cinematic AI video generation and world-class manipulation tools.</p>
+                </a>
+                <a href="https://leonardo.ai/" class="group p-8 glass rounded-[2rem] hover:bg-brand-secondary/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-secondary transition-colors">Leonardo.ai</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">Sophisticated generative platform for visual assets and models.</p>
+                </a>
+                <a href="https://pika.art/" class="group p-8 glass rounded-[2rem] hover:bg-brand-secondary/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-secondary transition-colors">Pika Labs</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">Dynamic text-to-video and animation protocol.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- specialized -->
+        <section class="mb-24">
+            <div class="category-header p-8 rounded-3xl mb-12" style="border-left-color: #22d3ee;">
+                <h2 class="text-3xl font-black text-white mb-2 italic">03. Specialized Neural Tools</h2>
+                <p class="text-slate-500 font-medium">Tools for engineering, productivity, and specific domains.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <a href="https://cursor.com/" class="group p-8 glass rounded-[2rem] hover:bg-brand-accent/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">Cursor</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">The AI-first code editor designed for rapid engineering.</p>
+                </a>
+                <a href="https://elevenlabs.io/" class="group p-8 glass rounded-[2rem] hover:bg-brand-accent/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">ElevenLabs</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">World-leading AI voice synthesis and cloning technology.</p>
+                </a>
+                <a href="https://gamma.app/" class="group p-8 glass rounded-[2rem] hover:bg-brand-accent/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">Gamma</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">Instant AI generation for presentations and structured docs.</p>
+                </a>
+                <a href="https://uizard.io/" class="group p-8 glass rounded-[2rem] hover:bg-brand-accent/5 transition-all hover:-translate-y-2 border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">Uizard</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-medium">Rapid UI/UX prototyping through generative AI design.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-20 text-center text-slate-600 text-sm font-bold border-t border-white/5 tracking-[0.3em]">
+        AI.INSIGHTS // NEURAL DIRECTORY v3.0
+    </footer>
+</body>
+</html>
